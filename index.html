@@ -1,1 +1,28 @@
 <p id="a"></p>
+<script src="datajs.js"></script>
+<script>
+let limit=0
+
+	var presult="a"
+	var result=""
+	while (presult!="."||presult!="") {
+		limit++
+		console.log(presult in data)
+	if (!(presult in data)) {
+		data[presult]=[]
+	}
+		presult=data[presult][Math.floor(data[presult].length*Math.random())]
+		if (presult==""||presult=="."||presult==undefined) {
+			break
+		}
+		result+=" "+presult.toString()
+		if (limit>9999) {
+			presult="."
+		}
+	}
+	if (result=="") {
+		result="..."
+	}
+	
+	window["a"].innerHTML=result
+</script>
